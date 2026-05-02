@@ -97,10 +97,10 @@ const App: React.FC = () => {
               <h3 className="text-2xl font-bold">Evolução Financeira</h3>
               <div className="flex gap-4">
                 <span className="flex items-center gap-2 text-sm text-muted">
-                  <span className="w-3 h-3 rounded-full bg-primary" /> Entradas
+                  <span className="w-3 h-3 rounded-full bg-emerald-500" /> Entradas
                 </span>
                 <span className="flex items-center gap-2 text-sm text-muted">
-                  <span className="w-3 h-3 rounded-full bg-danger" /> Saídas
+                  <span className="w-3 h-3 rounded-full bg-rose-500" /> Saídas
                 </span>
               </div>
             </div>

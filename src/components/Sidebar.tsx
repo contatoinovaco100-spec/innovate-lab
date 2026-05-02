@@ -16,7 +16,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
   ];
 
   return (
-    <aside className={`fixed left-0 top-0 h-full bg-white transition-all duration-500 z-50 ${isOpen ? 'w-64' : 'w-20'} shadow-2xl shadow-blue-900/5`}>
+    <aside className={`fixed left-0 top-0 h-full bg-white transition-all duration-300 z-50 ${isOpen ? 'w-64' : 'w-20'} border-r border-gray-100`}>
       <div className="p-8 flex items-center justify-between">
         {isOpen && (
           <div className="flex items-center gap-2">
@@ -36,30 +36,19 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
         {menuItems.map((item, index) => (
           <button
             key={index}
-            className={`w-full flex items-center gap-4 p-4 rounded-2xl transition-all duration-300 ${
+            className={`w-full flex items-center gap-4 p-3 rounded-xl transition-all duration-300 ${
               item.active 
-                ? 'bg-primary text-white shadow-lg shadow-primary/30 font-bold' 
-                : 'text-gray-400 hover:bg-gray-50 hover:text-gray-700'
+                ? 'bg-gray-100 text-gray-900 font-bold' 
+                : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
             }`}
           >
-            <span className={item.active ? 'text-white' : 'text-gray-400'}>{item.icon}</span>
+            <span className={item.active ? 'text-gray-900' : 'text-gray-400'}>{item.icon}</span>
             {isOpen && <span className="text-sm">{item.label}</span>}
           </button>
         ))}
       </nav>
 
-      {isOpen && (
-        <div className="mx-4 mt-10 p-6 rounded-3xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white relative overflow-hidden">
-          <div className="relative z-10">
-            <p className="text-xs font-bold uppercase tracking-wider opacity-80 mb-1">Plano Atual</p>
-            <p className="text-lg font-bold mb-3">Premium PRO</p>
-            <button className="w-full py-2 bg-white/20 backdrop-blur-md rounded-xl text-xs font-bold hover:bg-white/30 transition-all">
-              Ver Detalhes
-            </button>
-          </div>
-          <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full blur-2xl" />
-        </div>
-      )}
+
 
       <div className="absolute bottom-10 left-0 w-full px-4">
         <button className="w-full flex items-center gap-4 p-4 rounded-2xl text-gray-400 hover:bg-red-50 hover:text-danger transition-all duration-300">

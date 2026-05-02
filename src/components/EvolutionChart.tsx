@@ -12,12 +12,12 @@ const EvolutionChart: React.FC<EvolutionChartProps> = ({ data }) => {
         <AreaChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
           <defs>
             <linearGradient id="colorIncome" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#2563eb" stopOpacity={0.1}/>
-              <stop offset="95%" stopColor="#2563eb" stopOpacity={0}/>
+              <stop offset="5%" stopColor="#10b981" stopOpacity={0.1}/>
+              <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
             </linearGradient>
             <linearGradient id="colorExpense" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#ef4444" stopOpacity={0.1}/>
-              <stop offset="95%" stopColor="#ef4444" stopOpacity={0}/>
+              <stop offset="5%" stopColor="#f43f5e" stopOpacity={0.1}/>
+              <stop offset="95%" stopColor="#f43f5e" stopOpacity={0}/>
             </linearGradient>
           </defs>
           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
@@ -45,16 +45,16 @@ const EvolutionChart: React.FC<EvolutionChartProps> = ({ data }) => {
           <Area 
             type="monotone" 
             dataKey="income" 
-            stroke="#2563eb" 
-            strokeWidth={3}
+            stroke="#10b981" 
+            strokeWidth={2}
             fillOpacity={1} 
             fill="url(#colorIncome)" 
           />
           <Area 
             type="monotone" 
             dataKey="expense" 
-            stroke="#ef4444" 
-            strokeWidth={3}
+            stroke="#f43f5e" 
+            strokeWidth={2}
             fillOpacity={1} 
             fill="url(#colorExpense)" 
           />
