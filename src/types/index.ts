@@ -9,6 +9,8 @@ export type TransactionCategory =
   | 'freelance'
   | 'extras';
 
+export type TransactionStatus = 'pending' | 'paid';
+
 export interface Transaction {
   id: string;
   type: 'income' | 'expense';
@@ -16,6 +18,9 @@ export interface Transaction {
   category: TransactionCategory;
   description: string;
   date: string;
+  recurring?: boolean;
+  recurringId?: string; // groups all instances of the same recurring bill
+  status?: TransactionStatus; // for expenses: pending or paid
 }
 
 export type TaskPriority = 'alta' | 'média' | 'baixa';
